@@ -6,7 +6,7 @@ import mimetypes
 
 def lambda_handler(event, context):
     sns = boto3.resource('sns')
-    topic = sns.Topic('arn:aws:sns:us-east-1:538434518584:deployPortfolio')
+    topic = sns.Topic('arn:aws:sns:us-east-1:538434518584:deployPortfolioTopic')
 
     location = {
         "bucketName": 'mathieu.portfoliobuild',
