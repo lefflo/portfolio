@@ -3,12 +3,10 @@ phases:
   build:
     commands:
       - npm install
-      - npm run webpack
 artifacts:
   files:
-    - index-portfolio.html
+    - index.html
     - style.css
     - css/*
     - images/*
     - js/*
-    - dist/bundle.js
