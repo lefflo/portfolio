@@ -9,8 +9,8 @@ def lambda_handler(event, context):
     topic = sns.Topic('arn:aws:sns:us-east-1:538434518584:deployPortfolio')
 
     location = {
-        "bucketName": 'mathieu-portfolio-build',
-        "objectKey": 'buildPortfolio.zip',
+        "bucketName": 'mathieu.portfoliobuild',
+        "objectKey": 'portfoliobuild.zip',
     }
 
     try:
@@ -25,7 +25,7 @@ def lambda_handler(event, context):
 
         s3 = boto3.resource('s3')
 
-        portfolio_bucket = s3.Bucket('mathieu-portfolio')
+        portfolio_bucket = s3.Bucket('mathieu.portfolio')
         build_bucket = s3.Bucket(location["bucketName"])
 
         portfolio_zip = StringIO.StringIO()
