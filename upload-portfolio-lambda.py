@@ -10,7 +10,7 @@ portfolio_bucket = s3.Bucket('mathieu.portfolio')
 build_bucket = s3.Bucket('mathieu.portfoliobuild')
 
 portfolio_zip = StringIO.StringIO()
-        build_bucket.download_fileobj('portfoliobuild.zip', portfolio_zip)
+build_bucket.download_fileobj('portfoliobuild.zip', portfolio_zip)
 
         with zipfile.ZipFile(portfolio_zip) as myzip:
             for nm in myzip.namelist():
